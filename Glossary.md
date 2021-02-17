@@ -6,7 +6,8 @@ rm - A command used to remove a file from the filesystem.
 Use the '-r' flag to remove recursively. 
 Use the '-f' flag to force the operation without checking with the user.
 
-# Remove the folder called folderOne and all files within it.rm -rf folderOne
+# Remove the folder called folderOne and all files within it.
+rm -rf folderOne
 
 
 
@@ -34,10 +35,10 @@ cd folderOne
 
 
 echo - A command prints to the output the argument passed to it
+
 # Print the sentence 'Hello World!'
 echo Hello World!
-#
-echo Hello Worl`d!
+
 
 
 
