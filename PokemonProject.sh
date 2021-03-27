@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The overall most powerfull Pokemon
-cat Pokemon.csv | awk -F, '
+cat pokemon.csv | awk -F, '
 BEGIN{
 	max=0;
 	sum=0;
@@ -23,7 +23,7 @@ END{
 }'
 
 # The average of each column for the entire file
-cat Pokemon.csv | awk -F, '
+cat pokemon.csv | awk -F, '
 BEGIN{}
 {
 	if (NR==1) next;
@@ -39,7 +39,7 @@ END{
 }'
 
 # The most powerful Pokemon for each type
-cat Pokemon.csv | awk -F, '
+cat pokemon.csv | awk -F, '
 BEGIN{
 	name[6]="HP";
 	name[7]="Attack";
@@ -72,7 +72,7 @@ END{
 }'
 
 # The average statistics of the Pokemon for each type
-cat Pokemon.csv | awk -F, '
+cat pokemon.csv | awk -F, '
 BEGIN{}
 {
 	if (NR==1) next;
@@ -93,7 +93,7 @@ END{
 }'
 
 # The average total statistics of Pokemon which Legendary is True
-cat Pokemon.csv | awk -F, '
+cat pokemon.csv | awk -F, '
 BEGIN{
 	count=1
 	sum=0
