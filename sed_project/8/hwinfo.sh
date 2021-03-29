@@ -1,4 +1,4 @@
-lscpu ｜ sed -ne '/^CPU(s):/p'
+lscpu | sed -ne '/^CPU(s):/p'
 echo "======="
 echo "Memory:"
 free -h | sed -ne '1p' -ne '/^Mem:/p' -e 's/Gi/ Gigabytes/g'
