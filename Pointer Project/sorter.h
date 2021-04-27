@@ -1,1 +1,0 @@
-void sort(char* content, int size);
