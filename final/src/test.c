@@ -16,6 +16,7 @@ int example(){
  * Square the value x points to.
  */
 void easyPeasy(int* x){
+	*x = (*x) * (*x);
 }
 
 /**
@@ -24,6 +25,10 @@ void easyPeasy(int* x){
  * Set the g number to 10, the gpa to 1.16.
  */
 void one(Student* a){
+	set_first_name(a, "Jigglypuff");
+	set_last_name(a, "Ketchum");
+	set_g_number(a, 10);
+	set_gpa(a, 1.16);
 }
 
 /**
@@ -31,6 +36,11 @@ void one(Student* a){
  * (pointer parameters).
  */
 void two(Student* a, Student* b){
+	a->first_name = b->first_name;
+	a->gpa = b->gpa;
+	a->g_number = b->g_number;
+	a->last_name = b->last_name;
+	a->roommate = b->roommate;
 }
 
 /**
@@ -39,6 +49,11 @@ void two(Student* a, Student* b){
  */
 
 void three(Student a, Student* b){
+	a.first_name = b->first_name;
+	a.gpa = b->gpa;
+	a.g_number = b->g_number;
+	a.last_name = b->last_name;
+	a.roommate = b->roommate;
 }
 
 /**
@@ -52,6 +67,11 @@ void three(Student a, Student* b){
  */
 Student four(){
 	Student a;
+	set_first_name(&a, "T. Yoshisaur");
+	set_last_name(&a, "Munchakoopas");
+	set_g_number(&a, 1990);
+	set_gpa(&a, 3.1);
+	a.roommate = &Mario;
 	return a;
 }
 
@@ -64,8 +84,13 @@ Student four(){
  * Remember: C is pass by copy ONLY.
  */
 Student* five(){
-	return NULL;
-}
+	Student *a = (Student*)malloc(sizeof(Student));
+	set_first_name(a, "Luigi");
+	set_last_name(a, "Mario");
+	set_g_number(a, 2);
+	set_gpa(a, 3.54);
+	return a;
+} 
 
 /**
  * Create a hunk of memory we can use as an array of 10
@@ -78,7 +103,12 @@ Student* five(){
  * 3.54    (gpa [we know he's the smart one])
  */
 Student* six(){
-	return NULL;
+	Student *a = (Student*)malloc(sizeof(Student)*10);
+	set_first_name(a+3, "Luigi");
+	set_last_name(a+3, "Mario");
+	set_g_number(a+3, 2);
+	set_gpa(a+3, 3.54);
+	return a;
 }
 
 /**
@@ -94,7 +124,14 @@ Student* six(){
  * 3.54    (gpa [we know he's the smart one])
  */
 void seven(Student** students){
-	
+	students = (Student**)malloc(sizeof(Student*)*10);
+	for(int i = 0; i < 10; i++){
+		students[i] = (Student*)malloc(sizeof(Student));
+	}
+	set_first_name(a[9], "Luigi");
+	set_last_name(a[9], "Mario");
+	set_g_number(a[9], 2);
+	set_gpa(a[9], 3.54);
 }
 
 /**
@@ -104,6 +141,9 @@ void seven(Student** students){
  * -b + sqrt(b^2 - 4ac) / (2a)
  */
 double quadratic(double a, double b, double c){
+	double solution = -b + sqrt(b*b - 4*a*c) ;
+	solution = solution / (2*a) ;
+	return solution;
 }
 
 /**
@@ -120,4 +160,9 @@ double quadratic(double a, double b, double c){
  */
 #include <stdio.h>
 void capitalize(char* str, size_t len){
+	for (int i = 0; i < len; i++){
+		if(str[i] <= 'z' && str[i] >= 'a'){
+			str[i] = str[i]-'a'+ 'A';
+		}
+	}
 }
