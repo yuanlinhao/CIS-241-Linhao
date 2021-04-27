@@ -15,7 +15,7 @@ SRC_EXT = c
 # Path to the source directory, relative to the makefile
 SRC_PATH = ./src
 # Space-separated pkg-config libraries used by this project
-LIBS = ./lib/pkgconfig/gtest.pc
+LIBS = /home/woodriir/241/googletest/lib/pkgconfig/gtest.pc
 # General compiler flags
 COMPILE_FLAGS = --std=c++11 -g
 # Additional release-specific flags
